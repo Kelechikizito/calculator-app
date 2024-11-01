@@ -1,7 +1,8 @@
 const Buttons = () => {
   const ClickHandler = (e) => {
-    console.log(e.target.textContent)
-  }
+    const value = e.target.textContent;
+    console.log(value);
+  };
 
   return (
     <div className="grid grid-cols-4 grid-rows-5 p-4 py-6 gap-4 bg-[#262b38] rounded-lg text-2xl font-bold">
