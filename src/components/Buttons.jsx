@@ -1,7 +1,9 @@
-const Buttons = () => {
+import PropTypes from 'prop-types';
+
+const Buttons = ({ handleClick }) => {
   const ClickHandler = (e) => {
     const value = e.target.textContent;
-    console.log(value);
+    handleClick(value);
   };
 
   return (
@@ -30,6 +32,10 @@ const Buttons = () => {
       </button>
     </div>
   );
+};
+
+Buttons.propTypes = {
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default Buttons;
