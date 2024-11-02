@@ -14,6 +14,11 @@ const CalculatorContainer = () => {
       return prev === "0" ? value : prev + value;
     });
 
+    setPreviousOperand((prev) => {
+      // Add your button-click handling logic here, e.g., concatenating digits or performing calculations
+      return prev === "0" ? value : prev + value;
+    });
+
   };
 
   return (
