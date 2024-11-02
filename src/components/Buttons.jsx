@@ -3,7 +3,19 @@ import PropTypes from 'prop-types';
 const Buttons = ({ handleClick }) => {
   const ClickHandler = (e) => {
     const value = e.target.textContent;
-    handleClick(value);
+
+    // Determine if the clicked button is a number or operator
+    if (e.target.hasAttribute('data-num')) {
+      handleClick(value, 'number');
+    } else if (e.target.hasAttribute('data-operator')) {
+      handleClick(value, 'operator');
+    } else if (e.target.hasAttribute('data-delete')) {
+      handleClick(value, 'delete');
+    } else if (e.target.hasAttribute('data-reset')) {
+      handleClick(value, 'reset');
+    } else if (e.target.hasAttribute('data-output')) {
+      handleClick(value, 'output');
+    }
   };
 
   return (
@@ -39,4 +51,3 @@ Buttons.propTypes = {
 };
 
 export default Buttons;
-
