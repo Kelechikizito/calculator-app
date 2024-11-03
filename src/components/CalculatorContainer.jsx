@@ -8,18 +8,24 @@ const CalculatorContainer = () => {
   const [previousOperand, setPreviousOperand] = useState(""); // Initialize state for the operand
 
   const handleButtonClick = (value) => {
-    setCurrentOperand((prev) => prev + value);
-  
-    // Check if the value is an operator (e.g., "+", "-", "/", "*")
-    if (value === " + " || value === " - " || value === " / " || value === " * ") {
-      setPreviousOperand((prev) => Number(prev) + Number(currentOperand));
-      setCurrentOperand(""); // Reset current operand after operator is used
+    // Update the current operand based on the clicked button value
+
+    if (value === "RESET") {
+      setCurrentOperand("");
+      setPreviousOperand("");
+    } else if (value === "DEL") {
+      setCurrentOperand((prev) => prev.toString().slice(0, -1))
+      setPreviousOperand((prev) => prev.toString().slice(0, -1))
     } else {
-      // Otherwise, concatenate the value to the current operand as it's likely a number or decimal
-      setPreviousOperand((prev) => prev + value);
+      setCurrentOperand((prev) => {
+        return prev === "0" ? value : prev + value;
+      });
+
+      setPreviousOperand((prev) => {
+        return prev === "0" ? value : prev + value;
+      });
     }
   };
-  
 
   return (
     <div className="flex flex-col gap-4">
