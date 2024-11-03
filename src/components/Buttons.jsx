@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 const Buttons = ({ handleClick }) => {
   const ClickHandler = (e) => {
     const value = e.target.textContent;
+    e.target.hasAttribute('data-operator')?
+    handleClick(''):
     handleClick(value);
   };
 
