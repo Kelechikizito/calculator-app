@@ -15,15 +15,15 @@ const Buttons = ({ handleClick }) => {
       <button data-num className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>4</button>
       <button data-num className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>5</button>
       <button data-num className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>6</button>
-      <button data-operator className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>+</button>
+      <button data-operator className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}> + </button>
       <button data-num className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>1</button>
       <button data-num className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>2</button>
       <button data-num className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>3</button>
-      <button data-operator className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>-</button>
+      <button data-operator className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}> - </button>
       <button data-num className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>.</button>
       <button data-num className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>0</button>
-      <button data-operator className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>/</button>
-      <button data-operator className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}>x</button>
+      <button data-operator className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}> / </button>
+      <button data-operator className="rounded-lg bg-[#e9e2d9] text-[#444B5A] shadow-[0_4px_#b8a895]" onClick={ClickHandler}> x </button>
       <button data-reset className="col-span-2 rounded-lg bg-[#637097] text-[#EAE3DC] shadow-[0_4px_#3a516d]" onClick={ClickHandler}>
         RESET
       </button>
