@@ -14,7 +14,7 @@ const CalculatorContainer = () => {
       setCurrentOperand("");
       setPreviousOperand("");
     } else if (value === "DEL") {
-      setCurrentOperand((prev) => prev.toString().slice(0, -1))
+      setCurrentOperand((prev) => prev.toString().includes('') ? prev.toString().trim().slice(0, -1) : prev.toString().slice(0, -1))
       setPreviousOperand((prev) => prev.toString().slice(0, -1))
     } else {
       setCurrentOperand((prev) => {
