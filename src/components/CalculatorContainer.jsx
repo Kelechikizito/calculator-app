@@ -15,7 +15,7 @@ const CalculatorContainer = () => {
       setOperator(null);
     } else if (value === "DEL") {
       setCurrentOperand((prev) => prev.toString().slice(0, -1));
-    } else if (type === 'operator') {
+    } else if (type === 'operator' || value === '=') {
       if (currentOperand && previousOperand && operator) {
         const prevNum = parseFloat(previousOperand);
         const currentNum = parseFloat(currentOperand);
@@ -39,12 +39,12 @@ const CalculatorContainer = () => {
             result = currentNum;
         }
         
-        setPreviousOperand(result.toString() + " " + operator); // Update previousOperand with the result
-        setCurrentOperand(""); // Reset currentOperand for next input
+        setPreviousOperand(value === '=' ? "" :result.toString() + " " + value); // Update previousOperand with the result
+        setCurrentOperand(value !== '=' ? "" :result.toString()); // Reset currentOperand for next input
       } else if (currentOperand) {
         // Move currentOperand to previousOperand if only currentOperand is set
-        setPreviousOperand(currentOperand + " " + operator);
-        setCurrentOperand("");
+        setPreviousOperand(value === '=' ? "" :currentOperand + " " + value);
+        setCurrentOperand(value !== '=' ? "" :currentOperand);
       }
       setOperator(value); // Set the new operator
     } else {
