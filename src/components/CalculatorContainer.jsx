@@ -7,7 +7,7 @@ const CalculatorContainer = () => {
   const [currentOperand, setCurrentOperand] = useState(""); // Initialize state for the operand
   const [previousOperand, setPreviousOperand] = useState(""); // Initialize state for the operand
 
-  const handleButtonClick = (value) => {
+  const handleButtonClick = ({ value, type }) => {
 
     if (value === "RESET") {
       setCurrentOperand("");
@@ -15,7 +15,7 @@ const CalculatorContainer = () => {
     } else if (value === "DEL") {
       setCurrentOperand((prev) => prev.toString().slice(0, -1))
       setPreviousOperand((prev) => prev.toString().slice(0, -1))
-    } else if (value.hasAttribute('data-operator')) {
+    } else if (type === 'operator') {
       console.log('An operator was clicked')
     }
     else {
