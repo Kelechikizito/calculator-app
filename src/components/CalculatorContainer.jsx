@@ -19,6 +19,7 @@ const CalculatorContainer = () => {
       if (currentOperand && previousOperand && operator) {
         const prevNum = parseFloat(previousOperand);
         const currentNum = parseFloat(currentOperand);
+        if(isNaN(prevNum) || isNaN(currentNum)) return;
         
         let result;
         switch (operator) {
