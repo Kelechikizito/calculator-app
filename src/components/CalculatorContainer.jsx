@@ -8,6 +8,15 @@ const CalculatorContainer = () => {
   const [previousOperand, setPreviousOperand] = useState(""); // Initialize state for the previous operand
   const [operator, setOperator] = useState(null); // Initialize state for the operator
 
+  const roundToThreeDecimals = (num) => {
+    const numString = num.toString();
+    if (numString.includes(".") && numString.split(".")[1].length > 3) {
+      return parseFloat(num.toFixed(3));
+    } 
+    // Return the number as-is if it already has 3 or fewer decimal places
+    return num;
+  }
+
   const handleButtonClick = ({ value, type }) => {
     if (value === "RESET") {
       setCurrentOperand("");
@@ -38,6 +47,8 @@ const CalculatorContainer = () => {
           default:
             result = currentNum;
         }
+
+        result = roundToThreeDecimals(result);
         
         setPreviousOperand(value === '=' ? "" :result.toString() + " " + value); // Update previousOperand with the result
         setCurrentOperand(value !== '=' ? "" :result.toString()); // Reset currentOperand for next input
