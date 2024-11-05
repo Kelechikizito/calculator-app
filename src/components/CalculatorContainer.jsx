@@ -8,7 +8,6 @@ const CalculatorContainer = () => {
   const [previousOperand, setPreviousOperand] = useState(""); // Initialize state for the operand
 
   const handleButtonClick = (value) => {
-    // Update the current operand based on the clicked button value
 
     if (value === "RESET") {
       setCurrentOperand("");
