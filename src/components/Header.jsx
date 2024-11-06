@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./Header.css";
 
 const Header = () => {
   const [theme, setTheme] = useState("theme1");
@@ -15,7 +14,11 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between text-[#EAE3DC]">
+    <header className="flex justify-between text-[#EAE3DC]
+            theme1:text-theme1-textSecond
+            theme2:text-theme2-text
+            theme3:text-theme3-text
+    ">
       <div className="flex justify-center items-center">
         <h1 className="text-2xl font-bold">calc</h1>
       </div>
