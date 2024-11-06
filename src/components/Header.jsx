@@ -1,20 +1,8 @@
-import { useState, useEffect  } from "react";
+import { useState, useEffect } from "react";
+import './Header.css';
 
 const Header = () => {
-  const [themeToggler, setThemeToggler] = useState(false);
-
-  useEffect(() => {
-    if (themeToggler) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [themeToggler])
-
-  const toggleThemeTwo = () => {
-    setThemeToggler(!themeToggler)
-  }
-
+  const [theme, setTheme] = useState("theme1");
 
   return (
     <header className="flex justify-between text-[#EAE3DC] dark:text-black">
@@ -34,9 +22,25 @@ const Header = () => {
             <label htmlFor="theme3">3</label>
           </div>
           <div className="theme-inputs flex gap-[0.6rem] bg-[#232C43] p-[0.25rem] rounded-xl">
-            <input id="theme1" type="radio" name="theme" defaultChecked className="cursor-pointer appearance-none w-4 h-4 rounded-full checked:bg-[#D03F2F]"/>
-            <input id="theme2" type="radio" name="theme" className="cursor-pointer appearance-none w-4 h-4 rounded-full checked:bg-[#CA5502]" onClick={toggleThemeTwo}/>
-            <input id="theme3" type="radio" name="theme" className="cursor-pointer appearance-none w-4 h-4 rounded-full checked:bg-[#00E0D1]"/>
+            <input
+              id="theme1"
+              type="radio"
+              name="theme"
+              defaultChecked
+              className="cursor-pointer appearance-none w-4 h-4 rounded-full checked:bg-[#D03F2F]"
+            />
+            <input
+              id="theme2"
+              type="radio"
+              name="theme"
+              className="cursor-pointer appearance-none w-4 h-4 rounded-full checked:bg-[#CA5502]"
+            />
+            <input
+              id="theme3"
+              type="radio"
+              name="theme"
+              className="cursor-pointer appearance-none w-4 h-4 rounded-full checked:bg-[#00E0D1]"
+            />
           </div>
         </div>
       </div>
