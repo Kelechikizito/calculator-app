@@ -1,11 +1,21 @@
 import { useState, useEffect } from "react";
-import './Header.css';
+import "./Header.css";
 
 const Header = () => {
   const [theme, setTheme] = useState("theme1");
 
+  useEffect(() => {
+    // Remove previous theme class and apply the new theme class to `body`
+    document.body.classList.remove("theme1", "theme2", "theme3");
+    document.body.classList.add(theme);
+  }, [theme]);
+
+  const handleThemeChange = (e) => {
+    setTheme(e.target.id);
+  };
+
   return (
-    <header className="flex justify-between text-[#EAE3DC] dark:text-black">
+    <header className="flex justify-between text-[#EAE3DC]">
       <div className="flex justify-center items-center">
         <h1 className="text-2xl font-bold">calc</h1>
       </div>
@@ -21,25 +31,36 @@ const Header = () => {
             <label htmlFor="theme2">2</label>
             <label htmlFor="theme3">3</label>
           </div>
-          <div className="theme-inputs flex gap-[0.6rem] bg-[#232C43] p-[0.25rem] rounded-xl">
+          <div
+            className="theme-inputs flex gap-[0.6rem]  
+            theme1:bg-theme1-toggleBackground
+            theme2:bg-theme2-toggleBackground
+            theme3:bg-theme3-toggleBackground  p-[0.25rem] rounded-xl"
+          >
             <input
               id="theme1"
               type="radio"
               name="theme"
               defaultChecked
+              onChange={handleThemeChange}
+              checked={theme === "theme1"}
               className="cursor-pointer appearance-none w-4 h-4 rounded-full checked:bg-[#D03F2F]"
             />
             <input
               id="theme2"
               type="radio"
               name="theme"
+              onChange={handleThemeChange}
+              checked={theme === "theme2"}
               className="cursor-pointer appearance-none w-4 h-4 rounded-full checked:bg-[#CA5502]"
             />
             <input
               id="theme3"
               type="radio"
               name="theme"
+              onChange={handleThemeChange}
               className="cursor-pointer appearance-none w-4 h-4 rounded-full checked:bg-[#00E0D1]"
+              checked={theme === "theme3"}
             />
           </div>
         </div>

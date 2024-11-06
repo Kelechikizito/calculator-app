@@ -11,11 +11,18 @@ export default {
     extend: {
       colors: {
         theme1: {
-          primary: '#3B82F6',
-          secondary: '#60A5FA',
-          background: '#EFF6FF',
-          text: '#1E3A8A',
-        },
+          mainBackground: '#3c4654',               
+          toggleBackground: '#232C43',             
+          screenBackground: '#182034',              
+          keyBackground: '#e9e2d9',                 
+          keyShadow: '#1E5A64',                   
+          keyBackgroundToggle: '#CA5502',           
+          keyShadowTwo: '#873800',                  
+          keyBackgroundTwo: '#F4F3E6',              
+          keyShadowThree: '#A69D91',                
+          text: '#444b5a',                          
+          textWhite: '#FFFFFF'                    
+        }, 
         theme2: {
           mainBackground: '#E5E5E5',               
           toggleBackground: '#D1CCCC',             
@@ -26,11 +33,11 @@ export default {
           keyShadowTwo: '#873800',                  
           keyBackgroundTwo: '#F4F3E6',              
           keyShadowThree: '#A69D91',                
-          text: '#3B3A31',                          
+          text: '#35352C',                          
           textWhite: '#FFFFFF'                    
         },        
         theme3: {
-          mainBackground: '#1D0830',              
+          mainBackground: '#160628',              
           toggleBackground: '#1A0836',              
           screenBackground: '#1A0836',              
           keyBackground: '#6C34AC',                 
@@ -39,7 +46,7 @@ export default {
           keyShadowTwo: '#6EF9E3',                  
           keyBackgroundTwo: '#331A45',              
           keyShadowThree: '#85307D',                
-          text: '#FFD700',                          
+          text: '#FFE53D',                          
           textWhite: '#FFFFFF'                      
         }
         },
